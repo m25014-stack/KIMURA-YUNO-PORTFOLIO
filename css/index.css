@@ -1,0 +1,197 @@
+@charset "UTF-8";
+/* CSS Document */
+.first-view {
+  height: calc(100vh - 110px);
+  background-image: url("../images/index/bg-main-yoko.jpg");
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: cover;
+  display: flex;
+  align-items: center;
+}
+.first-view-text {
+  position: relative;     /* 基準にするため必要 */
+  width: 100%;
+  max-width: 1200px;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 40px;
+  padding-bottom: 80px;
+  color: #FFFFFF;
+  font-weight: bold;
+  text-shadow: 0px 0px 10px #778899;
+  min-height: 80vh;       
+}
+
+/* ① 左端 ＆ Y軸の真ん中 */
+.title-left {
+  position: absolute;
+  top: 50%;               /* 親の高さの真ん中を基準にする */
+  left: 40px;             /* 左端の余白 */
+  transform: translateY(-50%); /* 自分の高さの半分だけ上にずらして完全な中央にする */
+  font-size: 36px;        
+  margin: 0;
+}
+
+/* ② 右端 ＆ Y軸の真ん中 */
+.title-right {
+  position: absolute;
+  top: 50%;               /* 親の高さの真ん中を基準にする */
+  right: 40px;            /* 右端 */
+  transform: translateY(-50%); /* 自分の高さの半分だけ上にずらして完全な中央にする */
+  font-size: 36px;        
+  margin: 0;
+}
+
+/* ③ 上端真ん中の文字（2025-------2026 など） */
+.top-center-text {
+  text-align: center;
+  font-size: 16px;
+  margin: 0;
+}
+
+/* ④ 下端真ん中の文字（コーヒーを待つ時間も〜） */
+.bottom-center-text {
+  position: absolute;
+  bottom: 40px;           /* 下端に固定 */
+  left: 0;
+  right: 0;
+  text-align: center;
+  font-size: 18px;
+  margin: 0;
+}
+.first-view-text h1 {
+  font-family: "Metal", serif;
+  font-size: 56px;
+  line-height: 72px;
+}
+.first-view-text p {
+	 font-family: "Metal", serif;
+  font-size: 18px;
+  margin-top: 20px;
+}
+.lead {
+  max-width: 1200px;
+  margin: 100px auto;
+}
+.lead p {
+  line-height: 2;
+  text-align: center;
+}
+.link-button-area {
+  text-align: center;
+  margin-top: 40px;
+}
+.link-button {
+  background-color: #f4dd64;
+  display: inline-block;
+  min-width: 180px;
+  line-height: 48px;
+  border-radius: 24px;
+  font-family: "Metal", serif;
+  font-size: 14px;
+}
+.link-button:hover {
+  background-color: #d8b500;
+}
+.recommended {
+  background-color: #f8f8f8;
+  padding-top: 45px;
+  padding-bottom: 55px;
+}
+.recommended h2 {
+	 font-family: "Metal", serif;
+  font-size: 22px;
+  font-weight: bold;
+  text-align: center;
+}
+.recommended h2::after {
+  content: '';
+  display: block;
+  width: 36px;
+  height: 3px;
+  background-color: #000000;
+  margin-top: 20px;
+  margin-left: auto;
+  margin-right: auto;
+}
+.item-list {
+  display: flex;
+  padding-top: 40px;
+  padding-bottom: 10px;
+  padding-left: 60px;
+  padding-right: 60px;
+  overflow: scroll;
+}
+.item-list li {
+  flex-shrink: 0;
+  width: 260px;
+  margin-left: 75px;
+}
+.item-list li:first-child {
+  margin-left: 0;
+}
+.item-list dl {
+  margin-top: 20px;
+}
+.item-list dt {
+  font-weight: bold;
+}
+.item-list dd {
+  font-size: 13px;
+  line-height: 20px;
+  margin-top: 10px;
+}
+.item-list .price {
+  font-weight: bold;
+  margin-top: 15px;
+}
+@media (max-width: 800px) {
+  .first-view {
+    height: calc(100vh - 50px);
+    background-image: url("../images/index/bg-main-tate.jpg");
+    align-items: flex-start;
+  }
+  .first-view-text {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+	   padding-top: 60px;
+    padding-left: 20px;
+  }
+
+  /* 絶対配置を解除して、普通の縦並びに戻す */
+  .title-left,
+  .title-right {
+    position: static;
+    transform: none;
+    text-align: center;
+    margin: 10px 0;
+  }
+  .first-view-text h1 {
+    font-size: 36px;
+    line-height: 48px;
+  }
+  .first-view-text p {
+    font-size: 14px;
+    margin-top: 15px;
+  }
+  .lead {
+	  font-size: 13px;
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+  .lead p {
+    text-align: center;
+  }
+  .item-list {
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+  .item-list li {
+    width: 220px;
+    margin-left: 30px;
+  }
+}
